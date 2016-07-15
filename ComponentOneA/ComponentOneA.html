@@ -1,0 +1,16 @@
+<div ng-controller="groceryCtrl">
+
+<form ng-submit="groceryAdd()">
+    <input class = "inputs" type="text" ng-model="groceryInput" size="50" placeholder="Add New">
+    <input type="submit" value="Add New">
+</form>
+
+<br>
+
+<div ng-repeat="x in groceryList">
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.groceryText"></span>
+</div>
+
+    <p><button ng-click="remove()">Remove Checked</button></p>
+
+</div>
