@@ -1,3 +1,52 @@
+(function() {
+    
+    angular.module('myApp')
+        .component('mainComp', {
+            templateURL: "MainComponent/MainComponent.html",
+            controller: ToDoController
+    })
+        .config(toDoListConfig);
+    
+    function toDoListConfig($stateProvider) {
+        $stateProvider.state('main', {
+            url: '/main',
+            template: '<main-comp></main-comp>'
+        });
+    }
+    
+    function ToDoController() {
+        var self = this;
+        
+    }
+    
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 (function(){
 
     angular.module('myApp')
@@ -27,22 +76,5 @@
                 };
             }
 })();
+*/
 
-
-/* Breaks the code
- (function(){
- angular.module('myApp')
- .component('componentOne', {
- transclude: true,
- templateUrl: "ComponentOne/ComponentOne.html"
- .controller('groceryCtrl', function ($scope) {
- $scope.message = "We are on the Grocery Page";
- })
- .controller('shoppingCtrl', function ($scope) {
- $scope.message = "We are on the Shopping Page";
- })
- });
-
-
- })();
- */

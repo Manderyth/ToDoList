@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="maintenance">
+<head>
+    <title>ToDo Maintenance</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+<div class="container-fluid"
+     ng-controller="todoEditCtrl">
+    <h1>To Do List Maintenance</h1>
+    <div ng-show="view=='list'">
+        <div>
+            <div class="col-sm-12">
+                <button class="btn-primary btn-lg" ng-click="startAdd()">
+                    Add new to do
+                </button>
+            </div>
+        </div>
+        <h2>List of To Dos</h2>
+        <div class="row" ng-repeat="todo in todos"
+             ng-class="{oddRow:$index %2==0}">
+            <div class="col-sm-8">
+                <h4>{{$index + 1}}:   {{todo}}</h4>
+            </div>
+            <div class="btnGroup">
+                <div class="pull-right">
+                    <button class="btn-warning btn-sm" ng-click="startEdit($index)">
+                        Edit
+                    </button>
+                    <button class="btn-danger btn-sm" ng-click="startRemove($index)">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="view=='add'">
+        <h3>Specify the name of the to do:</h3>
+        <div class="col-sm-6">
+            <input class="form-control input-lg" type="text"
+                   placeholder="todo name"
+                   ng-model="todoBox" />
+        </div>
+        <div>
+            <button class="btn-success btn" ng-disabled="todoBox==''"
+                    ng-click="add()">
+                Add
+            </button>
+            <button class="btn-warning btn" ng-click="cancel()">
+                Cancel
+            </button>
+        </div>
+    </div>
+
+    <div ng-show="view=='edit'">
+        <h3>Specify the name of the to do:</h3>
+        <div class="col-sm-6">
+            <input class="form-control input-lg" type="text"
+                   placeholder="todo name"
+                   ng-model="todoBox" />
+        </div>
+        <div>
+            <button class="btn-success btn" ng-disabled="todoBox==''"
+                    ng-click="save()">
+                Save
+            </button>
+            <button class="btn-warning btn" ng-click="cancel()">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div ng-show="view=='delete'">
+        <h3>Confirm Delete</h3>
+        <div class="col-sm-6">
+            <p>Are you sure you want to delete todo "{{getSelected()}}?</p>
+        </div>
+        <div>
+            <button class="btn-success btn" ng-disabled="todoBox==''"
+                    ng-click="cancel()">
+                No
+            </button>
+            <button class="btn-danger btn" ng-click="remove()">
+                Yes
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="todoNames.js"></script>
+<script src="controller.js"></script>
+
+
+</body>
+</html>
