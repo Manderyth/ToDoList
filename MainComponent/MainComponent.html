@@ -1,15 +1,23 @@
-<h1> To Do Lists</h1>
+<div class="list">
 
-<div id="page">
+    <div ng-repeat = "list in vm.list"
+         ng-click = "vm.selectList('Your Momma')">
+        <p class="clickable">{{list.name}}</p>
+    </div>
 
-    <div> Put some sort of Add new Button Here </div>
+    <div>
+        <button class="btn-primary btn-lg" ng-click="startAdd()">
+            Add new to do
+        </button>
 
-    <div ng-repeat = "list in $ctrl.list"
-         ng-click = "$ctrl.selectList(list)"
-         ng-class = "{'hover-row': $ctrl.row ===$index, 'selected-row': $ctrl.selectedList ==== list}">
+        <div>
+            <input type="text"
+                placeholder="Add New"
+                ng-model="todoBox"/>
+        </div>
     </div>
 </div>
 
 <div class = "detail-div">
-    <component-detail list="$ctrl.selectedList()" on-close="$ctrl.closeDetail()"></component-detail>
+    <component-detail list="vm.selectedList" on-close="vm.closeDetail()"></component-detail>
 </div>

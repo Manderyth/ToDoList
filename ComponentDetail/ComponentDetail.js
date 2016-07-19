@@ -1,8 +1,11 @@
 (function () {
     var app = angular.module('myApp')
         .component('componentDetail', {
-        templateUrl: 'ComponentDetail/ComponentDetail.html'
-    })
+        templateUrl: 'ComponentDetail/ComponentDetail.html',
+            bindings: {
+                list: "="
+            }
+    });
 
     //var app = angular.module('myApp', [])
         app.controller('shoppingCtrl', function($scope) {

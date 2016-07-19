@@ -4,6 +4,15 @@
         templateUrl: 'ComponentOneA/ComponentOneA.html'
     })
 
+        .config(ListConfig);
+
+    function ListConfig($stateProvider) {
+        $stateProvider.state('component', {
+            url: '/component',
+            template: '<grocery-list></grocery-list>'
+        });
+    }
+
     //var app = angular.module('myApp', [])
         app.controller('groceryCtrl', function($scope) {
         $scope.groceryList = [{groceryText:'', done:false}];

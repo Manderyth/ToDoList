@@ -2,8 +2,9 @@
     
     angular.module('myApp')
         .component('mainComp', {
-            templateURL: "MainComponent/MainComponent.html",
-            controller: ToDoController
+            templateUrl: "MainComponent/MainComponent.html",
+            controller: ToDoController,
+            controllerAs: 'vm'
     })
         .config(toDoListConfig);
     
@@ -20,6 +21,7 @@
         self.selectedList = undefined;
         self.selectList = selectList;
         self.closeDetail = closeDetail;
+        self.startAdd = startAdd;
         
         function selectList(list) {
             self.selectedList = list;
@@ -28,8 +30,32 @@
         function closeDetail() {
             self.selectedList = undefined;
         }
+
+        function startAdd () {
+            self.list.push = list[list];
+        }
         
-        self.list = ['Grocery', 'Shopping', 'Yardwork', 'Home Improvement', 'Misc'];
+        self.list = [
+            {'name': 'Grocery',
+              'detail' : []
+            },
+
+            {'name': 'Shopping',
+                'detail' : []
+            },
+
+            {'name': 'Yardwork',
+                'detail' : []
+            },
+
+            {'name': 'Home Improvement',
+                'detail' : []
+            },
+
+            {'name': 'Misc',
+                'detail' : []
+            }
+        ];
         
     }
     
