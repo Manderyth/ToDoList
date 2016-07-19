@@ -16,6 +16,20 @@
     
     function ToDoController() {
         var self = this;
+        self.orderBy = '';
+        self.selectedList = undefined;
+        self.selectList = selectList;
+        self.closeDetail = closeDetail;
+        
+        function selectList(list) {
+            self.selectedList = list;
+        }
+        
+        function closeDetail() {
+            self.selectedList = undefined;
+        }
+        
+        self.list = ['Grocery', 'Shopping', 'Yardwork', 'Home Improvement', 'Misc'];
         
     }
     

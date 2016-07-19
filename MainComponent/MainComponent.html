@@ -2,18 +2,14 @@
 
 <div id="page">
 
+    <div> Put some sort of Add new Button Here </div>
 
-<div>
-    <ul>
-        <li class="list">Grocery List</li>
-        <li class="list">Shopping List</li>
-    </ul>
+    <div ng-repeat = "list in $ctrl.list"
+         ng-click = "$ctrl.selectList(list)"
+         ng-class = "{'hover-row': $ctrl.row ===$index, 'selected-row': $ctrl.selectedList ==== list}">
+    </div>
 </div>
 
-<div>
-<ui-view></ui-view>
-    <grocery-list class ="view"></grocery-list>
-    <shopping-list class ="view"></shopping-list>
-</div>
-
+<div class = "detail-div">
+    <component-detail list="$ctrl.selectedList()" on-close="$ctrl.closeDetail()"></component-detail>
 </div>

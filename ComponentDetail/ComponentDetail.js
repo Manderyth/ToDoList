@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('myApp')
-        .component('shoppingList', {
-        templateUrl: 'ComponentTwo/ComponentTwo.html'
+        .component('componentDetail', {
+        templateUrl: 'ComponentDetail/ComponentDetail.html'
     })
 
     //var app = angular.module('myApp', [])
