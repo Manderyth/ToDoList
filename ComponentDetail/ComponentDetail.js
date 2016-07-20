@@ -1,29 +1,34 @@
 (function () {
-    var app = angular.module('myApp')
+    angular.module('myApp')
         .component('componentDetail', {
-        templateUrl: 'ComponentDetail/ComponentDetail.html',
+            templateUrl: 'ComponentDetail/ComponentDetail.html',
             bindings: {
                 list: "="
-            }
-    });
+            },
+            controller: listController,
+            controllerAs: 'vm'
 
-    //var app = angular.module('myApp', [])
-        app.controller('shoppingCtrl', function($scope) {
-        $scope.shoppingList = [{shoppingText:'', done:false}];
+        });
 
-        $scope.shoppingAdd = function() {
-            $scope.shoppingList.push({shoppingText:$scope.shoppingInput, done:false});
-            $scope.shoppingInput = " ";
+
+    function listController() {
+        var self = this;
+        self.shoppingList = self.list.detail;
+
+
+        self.shoppingAdd = function () {
+            self.shoppingList.push({name: self.listInput, detail: [{shoppingText: self.shoppingInput}]});
+            self.shoppingInput = " ";
         };
 
-        $scope.remove = function() {
-            var oldList = $scope.shoppingList;
-            $scope.shoppingList = [];
-            angular.forEach(oldList, function(x) {
-                if (!x.done) $scope.shoppingList.push(x);
+        self.remove = function () {
+            var oldList = self.shoppingList;
+            self.shoppingList = [];
+            angular.forEach(oldList, function (x) {
+                if (!x.done) self.shoppingList.push(x);
             });
         };
-    });
+    }
 
 })();
 

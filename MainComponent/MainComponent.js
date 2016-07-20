@@ -19,10 +19,11 @@
         var self = this;
         self.orderBy = '';
         self.selectedList = undefined;
+        self.listInput = undefined;
         self.selectList = selectList;
         self.closeDetail = closeDetail;
         self.startAdd = startAdd;
-        
+                
         function selectList(list) {
             self.selectedList = list;
         }
@@ -32,9 +33,9 @@
         }
 
         function startAdd () {
-            self.list.push = list[list];
+            self.list.push ({name: self.listInput, detail: []});
         }
-        
+
         self.list = [
             {'name': 'Grocery',
               'detail' : []

@@ -1,19 +1,19 @@
-<div ng-show="$ctrl.list">
-    <div ng-controller="shoppingCtrl">
-            <p>{{$ctrl.list.name}}</p>
-        <form ng-submit="shoppingAdd()">
-            <input class="inputs" type="text" ng-model="shoppingInput" size="50" placeholder="Add New">
-            <input type="submit" value="Add New">
-        </form>
+<div ng-show="vm.list">
+    <div>
+            <p>{{list.name}}</p>
+        <div>
+            <input class="inputs" type="text" ng-model="vm.shoppingInput" size="50" placeholder="Add New">
+            <input type="submit" ng-click="vm.shoppingAdd()" value="Add New">
+        </div>
 
         <br>
 
-        <div ng-repeat="x in shoppingList">
+        <div ng-repeat="x in vm.shoppingList">
             <input type="checkbox" ng-model="x.done"> <span ng-bind="x.shoppingText"></span>
         </div>
 
         <p>
-            <button ng-click="remove()">Remove Checked</button>
+            <button ng-click="vm.remove()">Remove Checked</button>
         </p>
 
     </div>

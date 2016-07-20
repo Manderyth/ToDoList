@@ -1,21 +1,17 @@
 <div class="list">
 
     <div ng-repeat = "list in vm.list"
-         ng-click = "vm.selectList('list')">
+         ng-click = "vm.selectList(list)">
         <p class="clickable">{{list.name}}</p>
     </div>
 
-    <div>
-        <button class="btn-primary btn-lg" ng-click="startAdd()">
-            Add new to do
-        </button>
 
-        <div>
-            <input type="text"
-                placeholder="Add New"
-                ng-model="todoBox"/>
-        </div>
+    <div>
+        <input class="inputs" type="text" ng-model="vm.listInput" size="25" placeholder="Add New">
+        <input type="submit" ng-click="vm.startAdd()" value="Add New">
     </div>
+
+
 </div>
 
 <div class = "detail-div">
