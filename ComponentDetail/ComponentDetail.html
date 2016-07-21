@@ -1,15 +1,16 @@
-<div ng-show="vm.list">
+<div ng-show="vm.selectedObj">
     <div>
-            <p>{{list.name}}</p>
+            <p>{{vm.selectedObj.name}}</p>
         <div>
             <input class="inputs" type="text" ng-model="vm.shoppingInput" size="50" placeholder="Add New">
-            <input type="submit" ng-click="vm.shoppingAdd()" value="Add New">
+            <input type="submit" ng-click="vm.shoppingAdd(vm.selectedObj, vm.shoppingInput)" value="Add New">
         </div>
 
         <br>
 
-        <div ng-repeat="x in vm.shoppingList">
-            <input type="checkbox" ng-model="x.done"> <span ng-bind="x.shoppingText"></span>
+        <div ng-repeat="x in vm.selectedObj.detail">
+            <input type="checkbox" ng-model="x.done">
+            <span>{{x.shoppingText}}</span>
         </div>
 
         <p>

@@ -15,49 +15,33 @@
         });
     }
     
-    function ToDoController() {
+    function ToDoController(todoService) {
         var self = this;
         self.orderBy = '';
-        self.selectedList = undefined;
+        self.selectedObj = undefined;
         self.listInput = undefined;
         self.selectList = selectList;
         self.closeDetail = closeDetail;
         self.startAdd = startAdd;
+
+        self.$onInit = function() {
+            self.list = todoService.getLists();
+        };
                 
-        function selectList(list) {
-            self.selectedList = list;
+        function selectList(obj) {
+            self.selectedObj = obj;
         }
         
         function closeDetail() {
             self.selectedList = undefined;
         }
 
-        function startAdd () {
-            self.list.push ({name: self.listInput, detail: []});
+        function startAdd (input) {
+            todoService.startAdd({name: input, detail: []});
+            self.listInput = undefined;
         }
 
-        self.list = [
-            {'name': 'Grocery',
-              'detail' : []
-            },
 
-            {'name': 'Shopping',
-                'detail' : []
-            },
-
-            {'name': 'Yardwork',
-                'detail' : []
-            },
-
-            {'name': 'Home Improvement',
-                'detail' : []
-            },
-
-            {'name': 'Misc',
-                'detail' : []
-            }
-        ];
-        
     }
     
 })();

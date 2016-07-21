@@ -3,21 +3,19 @@
         .component('componentDetail', {
             templateUrl: 'ComponentDetail/ComponentDetail.html',
             bindings: {
-                list: "="
+                selectedObj: "="
             },
             controller: listController,
             controllerAs: 'vm'
-
         });
 
 
-    function listController() {
+    function listController(todoService) {
+        
         var self = this;
-        self.shoppingList = self.list.detail;
 
-
-        self.shoppingAdd = function () {
-            self.shoppingList.push({name: self.listInput, detail: [{shoppingText: self.shoppingInput}]});
+        self.shoppingAdd = function (selectedList, shoppingInput) {
+            todoService.shoppingAdd(selectedList, shoppingInput);
             self.shoppingInput = " ";
         };
 
