@@ -11,11 +11,12 @@
         <div ng-repeat="x in vm.selectedObj.detail">
             <input type="checkbox" ng-model="x.done">
             <span>{{x.shoppingText}}</span>
+            <button ng-click="vm.remove(vm.selectedObj, x)">Remove {{x.shoppingText}}</button>
         </div>
 
-        <p>
-            <button ng-click="vm.remove()">Remove Checked</button>
-        </p>
+        <div>
+            <button ng-click="vm.removeSelected(vm.selectedObj)">Remove Selected</button>
+        </div>
 
     </div>
 </div>

@@ -1,19 +1,21 @@
 <div class="list">
 
-    <div ng-repeat = "obj in vm.list"
-         ng-click = "vm.selectList(obj)">
-        <p class="clickable">{{obj.name}}</p>
+    <div ng-repeat = "obj in vm.list">
+        <p ng-click = "vm.selectList(obj)" class="clickable">{{obj.name}}</p>
+        <button ng-click = "vm.delete(obj)"> Delete {{obj.name}} </button>
     </div>
 
 
     <div>
         <input class="inputs" type="text" ng-model="vm.listInput" size="25" placeholder="Add New">
-        <input type="submit" ng-click="vm.startAdd(vm.listInput)" value="Add New">
+        <button ng-click="vm.startAdd(vm.listInput)" value="Add New">Add New</button>
     </div>
 
 
-</div>
+
 
 <div class = "detail-div">
     <component-detail selected-obj="vm.selectedObj" on-close="vm.closeDetail()"></component-detail>
+</div>
+
 </div>

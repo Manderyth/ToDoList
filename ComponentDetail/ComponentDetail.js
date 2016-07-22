@@ -14,17 +14,18 @@
         
         var self = this;
 
+        
         self.shoppingAdd = function (selectedList, shoppingInput) {
             todoService.shoppingAdd(selectedList, shoppingInput);
             self.shoppingInput = " ";
         };
+        
+        self.remove = function(list, task){
+            todoService.remove(list, task);
+        };
 
-        self.remove = function () {
-            var oldList = self.shoppingList;
-            self.shoppingList = [];
-            angular.forEach(oldList, function (x) {
-                if (!x.done) self.shoppingList.push(x);
-            });
+        self.removeSelected = function (selList){
+            todoService.removeSelected(selList);
         };
     }
 

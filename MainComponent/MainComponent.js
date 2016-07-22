@@ -17,7 +17,7 @@
     
     function ToDoController(todoService) {
         var self = this;
-        self.orderBy = '';
+        //self.orderBy = '';
         self.selectedObj = undefined;
         self.listInput = undefined;
         self.selectList = selectList;
@@ -40,7 +40,11 @@
             todoService.startAdd({name: input, detail: []});
             self.listInput = undefined;
         }
-
+        
+        self.delete = function (theObj) {
+            todoService.remove(theObj)
+        }
+        
 
     }
     
