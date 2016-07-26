@@ -1,7 +1,7 @@
-<div ng-show="vm.selectedObj">
-    <div>
+<div ng-show="vm.selectedObj" class="view">
+    <div class="view">
             <p>{{vm.selectedObj.name}}</p>
-        <div>
+        <div class="view">
             <input class="inputs" type="text" ng-model="vm.shoppingInput" size="50" placeholder="Add New">
             <input type="submit" ng-click="vm.shoppingAdd(vm.selectedObj, vm.shoppingInput)" value="Add New">
         </div>
