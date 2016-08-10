@@ -1,7 +1,10 @@
 (function(){
 
     angular.module('myApp', [
-        'ui.router'
+        'ui.router',
+        'ngStorage',
+        'ngAnimate',
+        'toaster'
     ])
         .config (myAppConfig);
     

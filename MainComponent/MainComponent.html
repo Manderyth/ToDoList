@@ -1,8 +1,8 @@
 <div class="list">
 
     <div ng-repeat = "obj in vm.list">
-        <p ng-click = "vm.selectList(obj)" class="clickable">{{obj.name}}</p>
-        <button ng-click = "vm.delete(obj)"> Delete {{obj.name}} </button>
+        <p class="test" ng-click = "vm.selectList(obj)" class="clickable">{{obj.name}}</p>
+        <button class="delete test space" ng-click = "vm.delete(obj)"> Delete {{obj.name}} </button>
     </div>
 
 
@@ -11,11 +11,10 @@
         <button ng-click="vm.startAdd(vm.listInput)" value="Add New">Add New</button>
     </div>
 
-
-
-
 <div class = "detail-div">
     <component-detail selected-obj="vm.selectedObj" on-close="vm.closeDetail()"></component-detail>
 </div>
+
+<toaster-container toaster-options="{'time-out': 3000, 'position-class': 'toast-top-right'}"></toaster-container>
 
 </div>

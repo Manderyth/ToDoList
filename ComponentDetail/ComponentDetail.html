@@ -1,9 +1,9 @@
 <div ng-show="vm.selectedObj" class="view">
-    <div class="view">
+    <div class="view, test">
             <p>{{vm.selectedObj.name}}</p>
-        <div class="view">
+        <div>
             <input class="inputs" type="text" ng-model="vm.shoppingInput" size="50" placeholder="Add New">
-            <input type="submit" ng-click="vm.shoppingAdd(vm.selectedObj, vm.shoppingInput)" value="Add New">
+            <input type="submit" ng-click="vm.shoppingAdd(vm.selectedObj, vm.shoppingInput); vm.saveToStorage" value="Add New">
         </div>
 
         <br>
@@ -11,7 +11,7 @@
         <div ng-repeat="x in vm.selectedObj.detail">
             <input type="checkbox" ng-model="x.done">
             <span>{{x.shoppingText}}</span>
-            <button ng-click="vm.remove(vm.selectedObj, x)">Remove {{x.shoppingText}}</button>
+            <button class="delete test space" ng-click="vm.remove(vm.selectedObj, x)">Remove {{x.shoppingText}}</button>
         </div>
 
         <div>

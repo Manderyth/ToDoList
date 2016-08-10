@@ -1,10 +1,19 @@
 (function(){
 angular.module('myApp')
-    .service('todoService', function () {
+    .service('todoService', function ($localStorage, $animate) {
 
         var self = this;
 
-         var list = [ ];
+        var data;
+
+        if ($localStorage.list) {
+            list = $localStorage.list
+        }
+        else {
+            list = [ ];
+        }
+
+
 
         self.getLists = function () {
             return list;
@@ -12,12 +21,18 @@ angular.module('myApp')
 
         self.startAdd = function (newItem) {
             list.push(newItem);
+            $localStorage.list = list;
         };
 
         self.shoppingAdd = function (theListToAddTo, textName) {
             theListToAddTo.detail.push({shoppingText: textName, done: false});
+            $localStorage.list = list;
         };
 
+        self.saveToStorage = function() {
+
+        };
+        
         self.setLists = function (newList) {
             list = newList;
         };
