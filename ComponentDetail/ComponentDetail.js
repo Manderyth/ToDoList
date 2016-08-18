@@ -18,6 +18,7 @@
         self.shoppingAdd = function (selectedList, shoppingInput) {
             todoService.shoppingAdd(selectedList, shoppingInput);
             self.shoppingInput = " ";
+            todoService.showToaster(shoppingInput);
         };
         
         self.remove = function(list, task){

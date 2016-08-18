@@ -4,7 +4,7 @@
         'ui.router',
         'ngStorage',
         'ngAnimate',
-        'toaster'
+        'ngMaterial'
     ])
         .config (myAppConfig);
     

@@ -17,13 +17,14 @@
     
     function ToDoController(todoService) {
         var self = this;
-        //self.orderBy = '';
         self.selectedObj = undefined;
         self.listInput = undefined;
         self.selectList = selectList;
         self.closeDetail = closeDetail;
         self.startAdd = startAdd;
-
+        self.master = {};
+        self.validatetask = false;
+        
         self.$onInit = function() {
             self.list = todoService.getLists();
         };
@@ -37,14 +38,19 @@
         }
 
         function startAdd (input) {
-            todoService.startAdd({name: input, detail: []});
+            if (self.listInput !== undefined) {
+                todoService.startAdd({name: input, detail: []});
+                self.validatetask = false;
+            } else {
+                self.validatetask = true;
+            }
             self.listInput = undefined;
+            todoService.showToaster(input);
         }
-        
+
         self.delete = function (theObj) {
             todoService.remove(theObj)
-        }
-        
+        };
 
     }
     

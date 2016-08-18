@@ -1,6 +1,6 @@
 (function(){
 angular.module('myApp')
-    .service('todoService', function ($localStorage, $animate) {
+    .service('todoService', function ($localStorage, $mdToast) {
 
         var self = this;
 
@@ -13,7 +13,7 @@ angular.module('myApp')
             list = [ ];
         }
 
-
+        self.showToaster = showToaster;
 
         self.getLists = function () {
             return list;
@@ -59,6 +59,17 @@ angular.module('myApp')
              var index = selList.detail.indexOf(removedItems[i]);
                 selList.detail.splice(index, 1);
             }
+        };
+
+        function showToaster(item) {
+
+            $mdToast.show(
+                $mdToast.simple()
+                    .textContent(item + ' created!')
+                    .position('bottom right')
+                    .hideDelay(3000)
+            );
+
         }
 
             })

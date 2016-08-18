@@ -7,7 +7,8 @@ h1 {
 
 .page {
     width: 100%;
-    overflow: hidden;
+    height: 100%;
+    overflow: auto;
     clear: both;
 }
 
@@ -16,15 +17,15 @@ h1 {
 }
 .list {
     float: left;
-    width: 50%;
+    width: 25%;
     clear: both;
 }
 
 .view {
     float: right;
-    width: 50%;
+    width: 75%;
     clear: both;
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -34,6 +35,7 @@ h1 {
     background-color: transparent;
     outline-style: none;
     box-shadow: none;
+    width: 150px;
 }
 
 .inputs:hover {
@@ -47,6 +49,7 @@ h1 {
 
 .delete:hover {
     background-color: red;
+    border-radius: 25%;
 }
 
 .test {
@@ -56,3 +59,4 @@ h1 {
 .space {
     margin-bottom: 35px;
 }
+

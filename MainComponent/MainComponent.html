@@ -7,14 +7,16 @@
 
 
     <div>
-        <input class="inputs" type="text" ng-model="vm.listInput" size="25" placeholder="Add New">
+        <input class="inputs" class="form-control" ng-model="vm.listInput" size="25" placeholder="Add New"/>
+        <span class="help-block" ng-show="vm.validatetask">
+           Task Name is required.
+        </span>
         <button ng-click="vm.startAdd(vm.listInput)" value="Add New">Add New</button>
     </div>
+</div>
 
 <div class = "detail-div">
     <component-detail selected-obj="vm.selectedObj" on-close="vm.closeDetail()"></component-detail>
 </div>
 
-<toaster-container toaster-options="{'time-out': 3000, 'position-class': 'toast-top-right'}"></toaster-container>
 
-</div>
