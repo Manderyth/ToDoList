@@ -69,3 +69,35 @@ h1 {
     background-color: antiquewhite;
 }
 
+@keyframes animateleave {
+    from {top: 12%; left: 5%;}
+    to {top: 12%; left: 105%;}
+}
+
+@keyframes animateenter {
+    from {top: 12%; left: -105%;}
+    to {top: 12%; left: 5%;}
+}
+
+.animation.ng-enter {
+    position: absolute;
+    width: 70%;
+    animation: animateenter 2s linear;
+}
+
+.animation.ng-leave {
+    position: absolute;
+    width: 70%;
+    animation: animateleave 2s linear;
+}
+
+.menu {
+    padding-right: 3%;
+    font-family: Chalkboard;
+    font-size: large;
+    margin-left: 1%;
+}
+
+.para {
+    margin-left: 3%;
+}

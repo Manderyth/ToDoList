@@ -7,10 +7,10 @@
 
 <h1 ui-sref="main" class="clickable">To Do Lists</h1>
 
-<div class="page">
-    <ui-view></ui-view>
-</div>
+<a ui-sref='MainComponent' class="menu">To Do Lists</a>
+<a ui-sref="about" class="menu">About</a>
 
+<div ui-view class="animation"></div>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
@@ -27,6 +27,7 @@
 <script src="Services/services.js"></script>
 <script src="MainComponent/MainComponent.js"></script>
 <script src="ComponentDetail/ComponentDetail.js"></script>
+<script src="about/about.js"></script>
 
 
 
