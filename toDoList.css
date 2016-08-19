@@ -7,8 +7,8 @@ h1 {
 
 .page {
     width: 100%;
-    height: 100%;
-    overflow: auto;
+    height: 90%;
+    overflow: hidden;
     clear: both;
 }
 
@@ -17,15 +17,22 @@ h1 {
 }
 .list {
     float: left;
-    width: 25%;
+    width: 23%;
     clear: both;
+    display: inline-block;
+    padding-left: 35px;
+    min-width: 250px;
 }
 
 .view {
-    float: right;
-    width: 75%;
+    position: absolute;
+    top: 15%;
+    right: 30%;
+    min-width: 250px;
+    width: 20vw;
     clear: both;
     text-align: left;
+    border: 10px black solid;
 }
 
 
@@ -58,5 +65,7 @@ h1 {
 
 .space {
     margin-bottom: 35px;
+    border-radius: 50%;
+    background-color: antiquewhite;
 }
 

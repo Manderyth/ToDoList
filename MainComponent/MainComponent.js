@@ -11,7 +11,7 @@
     function toDoListConfig($stateProvider) {
         $stateProvider.state('main', {
             url: '/main',
-            template: '<main-comp></main-comp>'
+            template: '<main-comp ></main-comp>'
         });
     }
     
