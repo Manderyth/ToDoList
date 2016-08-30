@@ -13,11 +13,13 @@
     function listController(todoService) {
         
         var self = this;
+        self.validatetask = false;
 
         
         self.shoppingAdd = function (selectedList, shoppingInput) {
             todoService.shoppingAdd(selectedList, shoppingInput);
-            self.shoppingInput = " ";
+                
+            self.shoppingInput = "";
             todoService.showToaster(shoppingInput);
         };
         
@@ -31,4 +33,5 @@
     }
 
 })();
+
 

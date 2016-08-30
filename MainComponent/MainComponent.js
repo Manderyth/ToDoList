@@ -38,12 +38,8 @@
         }
 
         function startAdd (input) {
-            if (self.listInput !== undefined) {
-                todoService.startAdd({name: input, detail: []});
-                self.validatetask = false;
-            } else {
-                self.validatetask = true;
-            }
+            todoService.startAdd({name: input, detail: []});
+                
             self.listInput = undefined;
             todoService.showToaster(input);
         }

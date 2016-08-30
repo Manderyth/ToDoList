@@ -6,13 +6,10 @@
     </div>
 
 
-    <div>
-        <input class="inputs" class="form-control" ng-model="vm.listInput" size="25" placeholder="Add New"/>
-        <span class="help-block" ng-show="vm.validatetask">
-           Task Name is required.
-        </span>
-        <button ng-click="vm.startAdd(vm.listInput)" value="Add New">Add New</button>
-    </div>
+    <form name="listForm" ng-submit="vm.startAdd(vm.listInput)">
+        <input name="listInput" required class="inputs" class="form-control" ng-model="vm.listInput" size="25" placeholder="Add New"/>
+        <button value="Add New" type="submit" ng-disabled="listForm.listInput.$invalid">Add New</button>
+    </form>
 </div>
 
 <div class = "detail-div view">

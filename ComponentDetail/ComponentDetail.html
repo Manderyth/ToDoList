@@ -2,10 +2,10 @@
 
     <div class="view, test">
             <p>{{vm.selectedObj.name}}</p>
-        <div>
-            <input class="inputs" type="text" ng-model="vm.shoppingInput" size="50" placeholder="Add New">
-            <input type="submit" ng-click="vm.shoppingAdd(vm.selectedObj, vm.shoppingInput); vm.saveToStorage" value="Add New">
-        </div>
+        <form name="taskForm" ng-submit="vm.shoppingAdd(vm.selectedObj, vm.shoppingInput); vm.saveToStorage">
+            <input name="taskInput" required class="inputs" type="text" ng-model="vm.shoppingInput" size="50" placeholder="Add New">
+            <input type="submit" value="Add New" ng-disabled="taskForm.taskInput.$invalid">
+        </form>
 
         <br>
 
